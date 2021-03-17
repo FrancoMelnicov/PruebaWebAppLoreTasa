@@ -1,0 +1,687 @@
+
+<div class="ocultar">
+
+    <h1>FORMULARIO A COMPLETAR</h1>
+
+    <form autocomplete="off" 
+          #formRegistro="ngForm" enctype="multipart/form-data">
+        <!-------------------------------------- MINI FORM 1 -------------------------------------->
+        <hr>
+
+        <div class="miniForm1">
+          <h3>DATOS TITULAR</h3>
+            <div>
+              <p>Fecha</p>
+              <input  type="date" name="fecha" size="20" [(ngModel)]="formularioObjeto.fecha" style="text-align: center;">
+            </div>
+            <div>
+              <p>Nombre y apellido*</p>
+              <input  type="text" name="nombre" size="30" [(ngModel)]="formularioObjeto.nombre_apellido">
+            </div>
+            <div>
+              <p>Domicilio</p>
+              <input  type="text" name="domicilio" size="40" [(ngModel)]="formularioObjeto.domicilio">
+            </div>
+            <div>
+              <p>Localidad</p>
+              <input  type="text" name="localidad" size="20" [(ngModel)]="formularioObjeto.localidad">
+            </div>
+            <div>
+              <p>Telefono</p>
+              <input  type="number" name="telefono" size="15" [(ngModel)]="formularioObjeto.telefono">
+            </div>
+            <div>
+              <p>Codigo Postal</p>
+              <input  type="number" name="codigoPostal" size="5" [(ngModel)]="formularioObjeto.codigoPostal">
+            </div>
+        </div>
+
+        <hr class="divisor1">
+    <!-------------------------------------- MINI FORM 3 -------------------------------------->
+        <div class="miniForm3">
+            <h3>DATOS AUTOMOTOR</h3>
+            <div>
+              <p>Marca*</p>
+
+              <select name="marca" [(ngModel)]="formularioObjeto.marca" (change)="obtenerGrupos()">
+                <option value="Seleccione una marca">Seleccione una marca</option>
+                <option *ngFor="let marca of marcas">{{marca}}</option>
+              </select>
+              <!--<input  type="text" name="marca" size="12" [(ngModel)]="formularioObjeto.marca"> -->
+            </div>
+            <div>
+              <p>Grupo*</p>
+              <select name="marca" [(ngModel)]="formularioObjeto.grupo" (change)="obtenerModelos()">
+                <option value="Seleccione un grupo">Seleccione un grupo</option>
+                <option *ngFor="let grupo of grupos">{{grupo}}</option>
+              </select>
+            </div>
+            <div>
+              <p>Modelo*</p>
+              <select name="modelo" [(ngModel)]="codia.codia" (change)="obtenerYears()">
+                <option value="Seleccione un grupo">Seleccione un grupo</option>
+                <option value="{{modelo_codia.codia}}" *ngFor="let modelo_codia of modelos_codias">{{modelo_codia.modelo}}</option>
+              </select>
+            </div>
+            <div>
+              <p>Año*</p>
+              <select name="year" [(ngModel)]="precio.precio" (change)="obtenerPrecios()">
+                <option value="Seleccione un grupo">Seleccione un grupo</option>
+                <option value="{{year.precio}}" *ngFor="let year of precios_years">{{year.year}}</option>
+              </select>
+            </div>
+            <div>
+              <p>Dominio*</p>
+              <input  type="text" name="dominio" size="10" [(ngModel)]="formularioObjeto.dominio">
+            </div>
+            <div>
+              <p>Color</p>
+
+              <input  type="text" name="color" size="10" [(ngModel)]="formularioObjeto.color">
+            </div>
+        </div>
+    <hr>
+
+    <!-------------------------------------- MINI FORM 2 -------------------------------------->
+  
+    <!-- 
+    <div class="miniForm2">
+      <div>
+        <p>INTERESADO EN:</p><input type="text" name="interesado">
+      </div>
+    </div>
+  <hr>
+  -->
+
+    <!-------------------------------------- MINI FORM 4 -------------------------------------->
+        <div class="miniForm4">
+            <h3>REVISION TECNICA</h3>
+            <div>
+              <p>Nombre del técnico:</p><input type="text" name="nombreTecnico" size="15" [(ngModel)]="formularioObjeto.nombreTecnico">
+            </div>
+        </div>
+
+        <hr class="divisor2">
+    <!-------------------------------------- MINI FORM 5 -------------------------------------->
+        <div class="miniForm5">
+            <h3>VERIFICACIÓN NUMEROS IDENTIFICATORIOS DEL AUTOMOTOR</h3>
+            <div>
+              <p>N° de Motor</p><input type="text" name="numeroMotor" size="10" [(ngModel)]="formularioObjeto.numeroMotor">
+            </div>
+            <div>
+              <p>N° de Chasis</p><input type="text" name="numeroChasis" size="20" [(ngModel)]="formularioObjeto.numeroChasis">
+            </div>
+        </div>
+    <!------------------------------ CHECKBOX INSPECCION AUTOMOTOR ------------------------------>
+    <hr>
+          <div class="miniForm6">
+            <h3>INSPECCION TECNICA DEL AUTOMOTOR</h3>
+
+            <div class="modificando">
+              <div>
+                <p>Motor 2 cilindros</p><input id="cilindro" type="radio" name="cilindro" value="Motor 2 cilindros"> 
+              </div>
+              <div>
+                <p>Motor 4 cilindros</p><input type="radio" name="cilindro" value="Motor 4 cilindros">
+              </div>
+              <div>
+                <p>Motor 6 cilindros</p><input type="radio" name="cilindro" value="Motor 6 cilindros">
+              </div>
+              <div>
+                <p>Motor 8 cilindros</p><input type="radio" name="cilindro" value="Motor 8 cilindros">
+              </div>
+              <div>
+                <p>Naftero</p><input type="radio" name="combustible" value="Naftero">
+              </div>
+              <div>
+                <p>Diesel</p><input type="radio" name="combustible" value="Diesel">
+              </div>
+              <div>
+                <p>GNC</p><input type="checkbox" name="combustibleGNC" value="GNC">
+              </div>
+              <div>
+                <p>Turbo</p><input type="checkbox" name="turbo" value="Turbo">
+              </div>
+              <div>
+                <p>4x4</p><input type="checkbox" name="4x4" value="4x4">
+              </div>
+            </div>
+
+            <div class="modificando">
+              <div>
+                <p>Caja 2 velocidades</p><input type="radio" name="cajaVelocidades" value="Caja 2 velocidades">
+              </div>
+              <div>
+                <p>Caja 3 velocidades</p><input type="radio" name="cajaVelocidades" value="Caja 3 velocidades">
+              </div>
+              <div>
+                <p>Caja 4 velocidades</p><input type="radio" name="cajaVelocidades" value="Caja 4 velocidades">
+              </div>
+              <div>
+                <p>Caja 5 velocidades</p><input type="radio" name="cajaVelocidades" value="Caja 5 velocidades">
+              </div>
+              <div>
+                <p>Caja 6 velocidades</p><input type="radio" name="cajaVelocidades" value="Caja 6 velocidades">
+              </div>
+              <div>
+                <p>Caja 7 velocidades</p><input type="radio" name="cajaVelocidades" value="Caja 7 velocidades">
+              </div>
+              <div>
+                <p>Caja 8 velocidades</p><input type="radio" name="cajaVelocidades" value="Caja 8 velocidades">
+              </div>
+              <div>
+                <p>Caja automática</p><input type="checkbox" name="cajaVelocidades" value="Caja automatica">
+              </div>
+              <div>
+                <p>Freno potencia</p><input type="checkbox" name="frenoPotencia" value="Freno potencia">
+              </div>
+            </div>
+
+            <div class="modificando">
+              <div>
+                <p>ABS</p><input type="checkbox" name="ABS" value="ABS">
+              </div>
+              <div>
+                <p>Dirección asistida</p><input type="checkbox" name="direccionAsistida" value="Direccion asistida">
+              </div>
+              <div>
+                <p>Lev. vidrios elec.</p><div><p>0</p><input type="radio" name="vidrios" value="No posee"><p>2</p><input type="radio" name="vidrios" value="Lev vidrios elec 2"><p>4</p><input type="radio" name="vidrios" value="Lev vidrios elec 2"></div>
+              </div>
+              <div>
+                <p>Calefacción</p><div><input type="checkbox" name="calefaccion" value="Calefaccion"></div>
+              </div>
+              <div>
+                <p>Aire Acondicionado</p><div><input type="checkbox" name="aireAcondicionado" value="Aire acondicionado"></div>
+              </div>
+              <div>
+                <p>Air Bag</p><div><input type="checkbox" name="airBag" value="Air Bag"></div>
+              </div>
+              <div>
+                <p>Cinturones seguridad</p><div><input type="checkbox" name="cinturonesSeg" value="Cinturones de seguridad"></div>
+              </div>
+            </div>
+
+            <div class="modificando">
+              <div>
+                <p>Cint. inerciales</p><div><p>0</p><input type="radio" name="cinturonesIner" value="No posee"><p>2</p><input type="radio" name="cinturonesIner" value="2 cinturones inerciales"><p>4</p><input type="radio" name="cinturonesIner" value="4 cinturones inerciales"></div>
+              </div>
+              <div>
+                <p>Radio</p><input type="checkbox" name="radio" value="Radio">
+              </div>
+              <div>
+                <p>Pasa cassette</p><input type="checkbox" name="pasaCassette" value="Pasa cassette">
+              </div>
+              <div>
+                <p>CD</p><input type="checkbox" name="cd" value="CD">
+              </div>
+              <div>
+                <p>Cierre central</p><input type="checkbox" name="cierreCentral" value="Cierre central">
+              </div>
+              <div>
+                <p>Vidrios tonalizados</p><input type="checkbox" name="vidriosTon" name="Vidrios tonalizados">
+              </div>
+              <div>
+                <p>KM</p><input type="text" size="10" name="km" [(ngModel)]="formularioObjeto.km" style="padding: 5px 0px; font-size: 15px;">
+              </div>
+            </div>
+          </div>
+    <!------------------------------------------------------------------------------------------->
+    <hr>
+    <!-------------------------------------- TABLA GRANDE --------------------------------------->
+    <h3>COMPONENTES DEL VEHICULO</h3>
+    <div class="scrollTable">
+        <table border="1">
+
+            <tr>
+              <td>COMPONENTES</td>
+              <td>ESTADO <br>B | R | M</td>
+              <td>OBSERVACIONES</td>
+              <td>PRESUPUESTO</td>
+            </tr>
+
+            <tr>
+              <td>Motor</td>
+              <td>
+                <input type="radio" name="motor" value="bueno">
+                <input type="radio" name="motor" value="regular">
+                <input type="radio" name="motor" value="malo">
+              </td>
+              <td><input type="text" size="30" name="observaciones1" placeholder="Ingrese una observacion" [(ngModel)]="formularioObjeto.motor.observaciones"></td>
+              <td><input type="text" size="5" name="presupuesto1" placeholder="$0.00" [(ngModel)]="formularioObjeto.motor.presupuesto" (change)="actualizarValor()"></td>
+            </tr>
+
+            <tr>
+              <td>Sistema de escape</td>
+              <td>
+                <input type="radio" name="escape" value="bueno">
+                <input type="radio" name="escape" value="regular">
+                <input type="radio" name="escape" value="malo">
+              </td>
+              <td><input type="text" size="30" name="observaciones1" placeholder="Ingrese una observacion" [(ngModel)]="formularioObjeto.sitemaEscape.observaciones"></td>
+              <td><input type="text" size="5" name="presupuesto2" placeholder="$0.00" [(ngModel)]="formularioObjeto.sitemaEscape.presupuesto" (change)="actualizarValor()"></td>
+            </tr>
+
+            <tr>
+              <td>Caja de cambios</td>
+              <td>
+                <input type="radio" name="cambios" value="bueno">
+                <input type="radio" name="cambios" value="regular">
+                <input type="radio" name="cambios" value="malo">
+              </td>
+              <td><input type="text" size="30" name="observaciones1" placeholder="Ingrese una observacion" [(ngModel)]="formularioObjeto.cajaCambios.observaciones"></td>
+              <td><input type="text" size="5" name="presupuesto3" placeholder="$0.00" [(ngModel)]="formularioObjeto.cajaCambios.presupuesto" (change)="actualizarValor()"></td>
+            </tr>
+
+            <tr>
+              <td>Sistema de suspensión</td>
+              <td>
+                <input type="radio" name="suspensión" value="bueno">
+                <input type="radio" name="suspensión" value="regular">
+                <input type="radio" name="suspensión" value="malo">
+              <td>
+              <input type="text" size="30" name="observaciones1" placeholder="Ingrese una observacion" [(ngModel)]="formularioObjeto.sistemaSuspension.observaciones"></td>
+              <td><input type="text" size="5" name="presupuesto4" placeholder="$0.00" [(ngModel)]="formularioObjeto.sistemaSuspension.presupuesto" (change)="actualizarValor()"></td>
+            </tr>
+
+            <tr>
+              <td>Diferencial (puente tras.)</td>
+              <td>
+                <input type="radio" name="diferencial" value="bueno">
+                <input type="radio" name="diferencial" value="regular">
+                <input type="radio" name="diferencial" value="malo">
+              </td>
+              <td><input type="text" size="30" name="observaciones1" placeholder="Ingrese una observacion" [(ngModel)]="formularioObjeto.diferencial.observaciones"></td>
+              <td><input type="text" size="5" name="presupuesto5" placeholder="$0.00" [(ngModel)]="formularioObjeto.diferencial.presupuesto" (change)="actualizarValor()"></td>
+            </tr>
+
+            <tr>
+              <td>Embrague</td>
+              <td>
+                <input type="radio" name="embrague" value="bueno">
+                <input type="radio" name="embrague" value="regular">
+                <input type="radio" name="embrague" value="malo">
+              </td>
+              <td><input type="text" size="30" name="observaciones1" placeholder="Ingrese una observacion" [(ngModel)]="formularioObjeto.embrague.observaciones"></td>
+              <td><input type="text" size="5" name="presupuesto6" placeholder="$0.00" [(ngModel)]="formularioObjeto.embrague.presupuesto" (change)="actualizarValor()"></td>
+            </tr>
+
+            <tr>
+              <td>Dirección</td>
+              <td>
+                <input type="radio" name="direccion" value="bueno">
+                <input type="radio" name="direccion" value="regular">
+                <input type="radio" name="direccion" value="malo">
+              </td>
+              <td><input type="text" size="30" name="observaciones1" placeholder="Ingrese una observacion" [(ngModel)]="formularioObjeto.direccion.observaciones"></td>
+              <td><input type="text" size="5" name="presupuesto7" placeholder="$0.00" [(ngModel)]="formularioObjeto.direccion.presupuesto" (change)="actualizarValor()"></td>
+            </tr>
+
+            <tr>
+              <td>Tren delantero</td>
+              <td>
+                <input type="radio" name="delantero" value="bueno">
+                <input type="radio" name="delantero" value="regular">
+                <input type="radio" name="delantero" value="malo">
+              </td>
+              <td><input type="text" size="30" name="observaciones1" placeholder="Ingrese una observacion" [(ngModel)]="formularioObjeto.trenDelantero.observaciones"></td>
+              <td><input type="text" size="5" name="presupuesto8" placeholder="$0.00" [(ngModel)]="formularioObjeto.trenDelantero.presupuesto" (change)="actualizarValor()"></td>
+            </tr>
+
+            <tr>
+              <td>Amortiguadores</td>
+              <td>
+                <input type="radio" name="amortiguadores" value="bueno">
+                <input type="radio" name="amortiguadores" value="regular">
+                <input type="radio" name="amortiguadores" value="malo">
+              </td>
+              <td><input type="text" size="30" name="observaciones1" placeholder="Ingrese una observacion" [(ngModel)]="formularioObjeto.amortiguador.observaciones"></td>
+              <td><input type="text" size="5" name="presupuesto9" placeholder="$0.00" [(ngModel)]="formularioObjeto.amortiguador.presupuesto" (change)="actualizarValor()"></td>
+            </tr>
+
+            <tr>
+              <td>Frenos</td>
+              <td>
+                <input type="radio" name="frenos" value="bueno">
+                <input type="radio" name="frenos" value="regular">
+                <input type="radio" name="frenos" value="malo">
+              </td>
+              <td><input type="text" size="30" name="observaciones1" placeholder="Ingrese una observacion" [(ngModel)]="formularioObjeto.frenos.observaciones"></td>
+              <td><input type="text" size="5" name="presupuesto10" placeholder="$0.00" [(ngModel)]="formularioObjeto.frenos.presupuesto" (change)="actualizarValor()"></td>
+            </tr>
+
+            <tr>
+              <td>Radiador</td>
+              <td>
+                <input type="radio" name="radiador" value="bueno">
+                <input type="radio" name="radiador" value="regular">
+                <input type="radio" name="radiador" value="malo">
+              </td>
+              <td><input type="text" size="30" name="observaciones1" placeholder="Ingrese una observacion" [(ngModel)]="formularioObjeto.radiador.observaciones"></td>
+              <td><input type="text" size="5" name="presupuesto11" placeholder="$0.00" [(ngModel)]="formularioObjeto.radiador.presupuesto" (change)="actualizarValor()"></td>
+            </tr>
+
+            <tr>
+              <td>Chasis</td>
+              <td>
+                <input type="radio" name="chasis" value="bueno">
+                <input type="radio" name="chasis" value="regular">
+                <input type="radio" name="chasis" value="malo">
+              </td>
+              <td><input type="text" size="30" name="observaciones1" placeholder="Ingrese una observacion" [(ngModel)]="formularioObjeto.chasis.observaciones"></td>
+              <td><input type="text" size="5" name="presupuesto12" placeholder="$0.00" [(ngModel)]="formularioObjeto.chasis.presupuesto" (change)="actualizarValor()"></td>
+            </tr>
+
+
+            <tr>
+              <td>Chapa carrocería</td>
+              <td>
+                <input type="radio" name="carroceria" value="bueno">
+                <input type="radio" name="carroceria" value="regular">
+                <input type="radio" name="carroceria" value="malo">
+              </td>
+              <td><input type="text" size="30" name="observaciones1" placeholder="Ingrese una observacion" [(ngModel)]="formularioObjeto.chapaCarroceria.observaciones"></td>
+              <td><input type="text" size="5" name="presupuesto13" placeholder="$0.00" [(ngModel)]="formularioObjeto.chapaCarroceria.presupuesto" (change)="actualizarValor()"></td>
+            </tr>
+
+            <tr>
+              <td>Vidrios</td>
+              <td>
+                <input type="radio" name="vidrios" value="bueno">
+                <input type="radio" name="vidrios" value="regular">
+                <input type="radio" name="vidrios" value="malo">
+              </td>
+              <td><input type="text" size="30" name="observaciones1" placeholder="Ingrese una observacion" [(ngModel)]="formularioObjeto.vidrios.observaciones"></td>
+              <td><input type="text" size="5" name="presupuesto14" placeholder="$0.00" [(ngModel)]="formularioObjeto.vidrios.presupuesto" (change)="actualizarValor()"></td>
+            </tr>
+
+            <tr>
+              <td>Maquina levanta cristales</td>
+              <td>
+                <input type="radio" name="levantaCristales" value="bueno">
+                <input type="radio" name="levantaCristales" value="regular">
+                <input type="radio" name="levantaCristales" value="malo">
+              </td>
+              <td><input type="text" size="30" name="observaciones1" placeholder="Ingrese una observacion" [(ngModel)]="formularioObjeto.levantaCristales.observaciones"></td>
+              <td><input type="text" size="5" name="presupuesto15" placeholder="$0.00" [(ngModel)]="formularioObjeto.levantaCristales.presupuesto" (change)="actualizarValor()"></td>
+            </tr>
+
+            <tr>
+              <td>Colizas</td>
+              <td>
+                <input type="radio" name="colizas" value="bueno">
+                <input type="radio" name="colizas" value="regular">
+                <input type="radio" name="colizas" value="malo">
+              </td>
+              <td><input type="text" size="30" name="observaciones1" placeholder="Ingrese una observacion" [(ngModel)]="formularioObjeto.colizas.observaciones"></td>
+              <td><input type="text" size="5" name="presupuesto16" placeholder="$0.00" [(ngModel)]="formularioObjeto.colizas.presupuesto" (change)="actualizarValor()"></td>
+            </tr>
+
+            <tr>
+              <td>Pintura</td>
+              <td>
+                <input type="radio" name="pintura" value="bueno">
+                <input type="radio" name="pintura" value="regular">
+                <input type="radio" name="pintura" value="malo">
+              </td>
+              <td><input type="text" size="30" name="observaciones1" placeholder="Ingrese una observacion" [(ngModel)]="formularioObjeto.pintura.observaciones"></td>
+              <td><input type="text" size="5" name="presupuesto17" placeholder="$0.00" [(ngModel)]="formularioObjeto.pintura.presupuesto"(change)="actualizarValor()"></td>
+            </tr>
+
+            <tr>
+              <td>Tapizado - Alfombras</td>
+              <td>
+                <input type="radio" name="tapizados-alfombras" value="bueno">
+                <input type="radio" name="tapizados-alfombras" value="regular">
+                <input type="radio" name="tapizados-alfombras" value="malo">
+              </td>
+              <td><input type="text" size="30" name="observaciones1" placeholder="Ingrese una observacion" [(ngModel)]="formularioObjeto.tapizados_alfombras.observaciones"></td>
+              <td><input type="text" size="5" name="presupuesto18" placeholder="$0.00" [(ngModel)]="formularioObjeto.tapizados_alfombras.presupuesto" (change)="actualizarValor()"></td>
+            </tr>
+
+            <tr>
+              <td>Instalación eléctrica</td>
+              <td>
+                <input type="radio" name="instElectrica" value="bueno">
+                <input type="radio" name="instElectrica" value="regular">
+                <input type="radio" name="instElectrica" value="malo">
+              </td>
+              <td><input type="text" size="30" name="observaciones1" placeholder="Ingrese una observacion" [(ngModel)]="formularioObjeto.instalacionElectrica.observaciones"></td>
+              <td><input type="text" size="5" name="presupuesto19" placeholder="$0.00" [(ngModel)]="formularioObjeto.instalacionElectrica.presupuesto" (change)="actualizarValor()"></td>
+            </tr>
+
+            <tr>
+              <td>Instrumentos tablero</td>
+              <td>
+                <input type="radio" name="tablero" value="bueno">
+                <input type="radio" name="tablero" value="regular">
+                <input type="radio" name="tablero" value="malo">
+              </td>
+              <td><input type="text" size="30" name="observaciones1" placeholder="Ingrese una observacion" [(ngModel)]="formularioObjeto.instrumentoTablero.observaciones"></td>
+              <td><input type="text" size="5" name="presupuesto20" placeholder="$0.00" [(ngModel)]="formularioObjeto.instrumentoTablero.presupuesto" (change)="actualizarValor()"></td>
+            </tr>
+
+            <tr>
+              <td>Acumulador</td>
+              <td>
+                <input type="radio" name="acumulador" value="bueno">
+                <input type="radio" name="acumulador" value="regular">
+                <input type="radio" name="acumulador" value="malo">
+              </td>
+              <td><input type="text" size="30" name="observaciones1" placeholder="Ingrese una observacion" [(ngModel)]="formularioObjeto.acumulador.observaciones"></td>
+              <td><input type="text" size="5" name="presupuesto21" placeholder="$0.00" [(ngModel)]="formularioObjeto.acumulador.presupuesto" (change)="actualizarValor()"></td>
+            </tr>
+
+            <tr>
+              <td>Faros</td>
+              <td>
+                <input type="radio" name="faros" value="bueno">
+                <input type="radio" name="faros" value="regular">
+                <input type="radio" name="faros" value="malo">
+              </td>
+              <td><input type="text" size="30" name="observaciones1" placeholder="Ingrese una observacion" [(ngModel)]="formularioObjeto.faros.observaciones"></td>
+              <td><input type="text" size="5" name="presupuesto22" placeholder="$0.00" [(ngModel)]="formularioObjeto.faros.presupuesto" (change)="actualizarValor()"></td>
+            </tr>
+
+            <tr>
+              <td>Limpiaparabrisas</td>
+              <td>
+                <input type="radio" name="limpiaParabrisas" value="bueno">
+                <input type="radio" name="limpiaParabrisas" value="regular">
+                <input type="radio" name="limpiaParabrisas" value="malo">
+              </td>
+              <td><input type="text" size="30" name="observaciones1" placeholder="Ingrese una observacion" [(ngModel)]="formularioObjeto.limpiaParabrisas.observaciones"></td>
+              <td><input type="text" size="5" name="presupuesto23" placeholder="$0.00" [(ngModel)]="formularioObjeto.limpiaParabrisas.presupuesto" (change)="actualizarValor()"></td>
+            </tr>
+
+            <tr>
+              <td>Limpia lavaluneta</td>
+              <td>
+                <input type="radio" name="limpiaLavaluneta" value="bueno">
+                <input type="radio" name="limpiaLavaluneta" value="regular">
+                <input type="radio" name="limpiaLavaluneta" value="malo">
+              </td>
+              <td><input type="text" size="30" name="observaciones1" placeholder="Ingrese una observacion" [(ngModel)]="formularioObjeto.limpiaLavaLuneta.observaciones"></td>
+              <td><input type="text" size="5" name="presupuesto24" placeholder="$0.00" [(ngModel)]="formularioObjeto.limpiaLavaLuneta.presupuesto" (change)="actualizarValor()"></td>
+            </tr>
+
+            <tr>
+              <td>Faltantes</td>
+              <td colspan="3">Gato<input type="checkbox" style="margin: 20px 40px 0px 10px;"> Auxilio<input type="checkbox" style="margin: 20px 40px 0px 10px;"> Llave rueda<input type="checkbox" style="margin: 20px 40px 0px 10px;"> 
+                <br>
+                <br>
+              Otros: <input type="text" size="40"></td>
+            </tr>
+
+            <tr>
+              <td colspan="4"><strong style="font-size: 20px;">TOTAL: </strong> <input type="text" size="20" placeholder="$0.00" style="margin: 10px 20px;" name="totalComponentes" [(ngModel)]="formularioObjeto.totalComponentes"></td>
+            </tr>
+
+
+
+      </table>
+    </div>
+    <!------------------------------------------------------------------------------------------->
+
+    <!--------------------- ILUSTRACION AUTITO. CHAPA Y PINTURA. SUBIR FOTO --------------------->
+    <h3>CHAPERIA Y PINTURA</h3>
+    <div class="scrollTable">
+        <table border="1">
+
+            <tr>
+                <td colspan="2.5">ILUSTRACIÓN <br> (Marque aquí los daños visibles <br>y enumerelos en chaperia y pintura) </td>
+                <td>CHAPA Y PINTURA <br> (Enumere los daños visibles del<br> vehículo y luego marquelos en
+                la Ilustración)</td>
+            </tr>
+            <tr>
+                <td colspan="2"><img src="../../assets/images/autito.png" alt="foto auto formulario"></td>
+                <td style="padding: 0%;"> <textarea style = "width: 395px; height: 300px;" name="daños_chaperiaypintura" id="textarea_cyp" cols="55" ></textarea></td>
+            </tr>
+        </table>
+    </div>
+    <!------------------------------------------------------------------------------------------->
+
+    
+    <!-------------------------------------- FORM IMAGENES ------------------------------------>
+
+    <div>
+      <h3>Imágenes del vehículo</h3>
+      <input type="file" name="imagenFrontal">
+      <input type="file" name="iamgenLateralIzquierda">
+      <input type="file" name="iamgenLateralDerecha">
+      <input type="file" name="imagenTrasera">
+      <input type="file" name="imagenInterior">
+      <input type="submit" value="Enviar">
+      <br>
+      <br>
+    </div>
+
+
+    <!-------------------------------------- FORM NEUMATICOS ------------------------------------>
+    <h3>NEUMATICOS DEL VEHICULO</h3>
+    <div class="scrollTable">
+        <table border="1">
+            <tr>
+              <td colspan="6">NEUMATICOS </td>
+            </tr>
+
+            <tr>
+              <td>Ubicacion</td>
+              <td>Marca</td>
+              <td>B</td>
+              <td>R</td>
+              <td>M</td>
+              <td>Medidas</td>
+            </tr>
+
+            <tr>
+              <td>Delantera I</td>
+              <td><input type="text"></td>
+              <td><input type="radio" name="delanteraI"></td>
+              <td><input type="radio" name="delanteraI"></td>
+              <td><input type="radio" name="delanteraI"></td>
+              <td><input type="text" size="20" placeholder="_ _ _ / _ _ / _ _"></td>
+            </tr>
+
+            <tr>
+              <td>Delantera D</td>
+              <td><input type="text"></td>
+              <td><input type="radio" name="delanteraD"></td>
+              <td><input type="radio" name="delanteraD"></td>
+              <td><input type="radio" name="delanteraD"></td>
+              <td><input type="text" size="20" placeholder="_ _ _ / _ _ / _ _"></td>
+            </tr>
+
+            <tr>
+              <td>Trasera I</td>
+              <td><input type="text"></td>
+              <td><input type="radio" name="traseraI"></td>
+              <td><input type="radio" name="traseraI"></td>
+              <td><input type="radio" name="traseraI"></td>
+              <td><input type="text" size="20" placeholder="_ _ _ / _ _ / _ _"></td>
+            </tr>
+
+            <tr>
+              <td>Trasera D</td>
+              <td><input type="text"></td>
+              <td><input type="radio" name="traseraD"></td>
+              <td><input type="radio" name="traseraD"></td>
+              <td><input type="radio" name="traseraD"></td>
+              <td><input type="text" size="20" placeholder="_ _ _ / _ _ / _ _"></td>
+            </tr>
+
+            <tr>
+              <td>Auxiliar</td>
+              <td><input type="text"></td>
+              <td><input type="radio" name="auxiliar"></td>
+              <td><input type="radio" name="auxiliar"></td>
+              <td><input type="radio" name="auxiliar"></td>
+              <td><input type="text" size="20" placeholder="_ _ _ / _ _ / _ _"></td>
+            </tr>
+
+            <tr>
+              <td colspan="6">VEHICULOS CON BALANCIN O DUAL</td>
+            </tr>
+
+            <tr>
+              <td>Trasera I</td>
+              <td><input type="text"></td>
+              <td><input type="radio" name="conTraseraI"></td>
+              <td><input type="radio" name="conTraseraI"></td>
+              <td><input type="radio" name="conTraseraI"></td>
+              <td><input type="text" size="20" placeholder="_ _ _ / _ _ / _ _"></td>
+            </tr>
+
+            <tr>
+              <td>Trasera D</td>
+              <td><input type="text"></td>
+              <td><input type="radio" name="conTraseraD"></td>
+              <td><input type="radio" name="conTraseraD"></td>
+              <td><input type="radio" name="conTraseraD"></td>
+              <td><input type="text" size="20" placeholder="_ _ _ / _ _ / _ _"></td>
+            </tr>
+      </table>
+    </div>
+    <!------------------------------------------------------------------------------------------->
+
+    <!-------------------------------------PRECIO DE TOMA---------------------------------------->
+    <hr>
+
+    <div class="miniForm7">
+      <h3>PRECIO DE TOMA</h3>
+    <div class="scrollTable">
+    <table border= "1">
+
+            <tr>
+              <td>Precio InfoAuto</td>
+              <td><input type="text"  name="precio_infoauto" size="40" placeholder="$" [(ngModel)]="formularioObjeto.precioInfoAuto"></td>
+            </tr>
+
+            <tr>
+              <td>Descuento Estipulado (info -)</td>
+              <td><input type="text" name="descuento" size="40" placeholder="Xx %" [(ngModel)]="formularioObjeto.descuento"></td>
+            </tr>
+
+            <tr>
+              <td>Gastos de Preparación</td>
+              <td><input type="text" name="gastos" size="40" placeholder="$" [(ngModel)]="formularioObjeto.gastos"></td>
+            </tr>
+
+            <tr>
+              <td>Precio de toma</td>
+              <td><input type="text" name="precioFinal" size="40" placeholder=" 1 (2+3)" [(ngModel)]="formularioObjeto.precioFinal"></td>
+            </tr>
+
+    </table>
+    </div>
+    </div>
+    <!------------------------------------------------------------------------------------------->
+
+    <div class="cargar">
+      <button><a (click)="cargarForm()" [routerLink]="['/historial']">CARGAR FORMULARIO</a></button>
+    </div>
+    <div class="reload">
+      <button (click)="nuevoForm()">NUEVO FORMULARIO</button>
+    </div>
+  </form>
+
+</div>

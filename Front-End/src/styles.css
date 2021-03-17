@@ -1,0 +1,9 @@
+body{
+    /*background: linear-gradient(to bottom, white, grey);*/
+    background-color: rgb(223, 223, 223);
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0 auto;
+    font-family: 'Poppins', sans-serif;
+}
+
