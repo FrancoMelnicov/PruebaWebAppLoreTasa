@@ -10,7 +10,7 @@ export class FormularioServicio {
     constructor(
         public _http: HttpClient
     ){
-        this.url = "http://localhost/WebAppLorenzoTasa/Back-End/src/servicios/traer_modelos.php"
+        this.url = "http://web-app-lorenzo-tasaciones.herokuapp.com/src/servicios/traer_modelos.php"
     }
 
     enviarMarcasYModelos(marca_grupo: any): Observable<any>{
