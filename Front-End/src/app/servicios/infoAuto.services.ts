@@ -14,9 +14,9 @@ export class InfoAutoServicio {
     constructor(
         public _http: HttpClient
     ){
-        this.url1 = "http://localhost/WebAppLorenzoTasa/Back-End/src/servicios/traer_marcas_grupos.php";
-        this.url2 = "http://localhost/WebAppLorenzoTasa/Back-End/src/servicios/traer_modelos.php";
-        this.url3 = "http://localhost/WebAppLorenzoTasa/Back-End/src/servicios/traer_precios_usados.php";
+        this.url1 = "https://web-app-lorenzo-tasaciones.herokuapp.com/src/servicios/traer_marcas_grupos.php";
+        this.url2 = "http://web-app-lorenzo-tasaciones.herokuapp.com/src/servicios/traer_modelos.php";
+        this.url3 = "http://web-app-lorenzo-tasaciones.herokuapp.com/src/servicios/traer_precios_usados.php";
 
     }
 
