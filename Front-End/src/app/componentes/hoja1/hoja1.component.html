@@ -1,0 +1,80 @@
+
+    <form autocomplete="off" 
+          #formRegistro="ngForm">
+          <h1>ETAPA 1/5</h1>
+          <hr>
+        <!--------------------------------------DATOS TITULAR -------------------------------------->
+        
+
+        <div class="miniForm1">
+          <h3>DATOS TITULAR</h3>
+        <div>
+          Nombre y apellido* <input  type="text" name="nombre" size="30"required>
+        </div>  
+        </div>
+
+        <hr class="divisor1">
+    <!-------------------------------------- DATOS DEL AUTOMOTOR -------------------------------------->
+        <div class="miniForm3">
+            <h3>DATOS AUTOMOTOR</h3>
+            <div>
+              Marca* <select name="marca" required>
+                <option value="Seleccione una marca">Seleccione una marca</option>
+                <option *ngFor="let marca of marcas">{{marca}}</option>
+              </select>
+              <!--<input  type="text" name="marca" size="12" [(ngModel)]="formularioObjeto.marca"> -->
+            </div>
+
+            <div>
+              Grupo* <select name="marca"required>
+                <option value="Seleccione un grupo">Seleccione un grupo</option>
+                <option *ngFor="let grupo of grupos">{{grupo}}</option>
+              </select>
+            </div>
+
+            <div>
+              Modelo* <select name="modelo"required>
+                <option value="Seleccione un grupo">Seleccione un grupo</option>
+                <option value="{{modelo_codia.codia}}" *ngFor="let modelo_codia of modelos_codias">{{modelo_codia.modelo}}</option>
+              </select>
+            </div>
+
+            <div>
+              Año* <select name="year"required>
+                <option value="Seleccione un grupo">Seleccione un grupo</option>
+                <option value="{{year.precio}}" *ngFor="let year of precios_years">{{year.year}}</option>
+              </select>
+            </div>
+
+            <div>
+              Dominio* <input  type="text" name="dominio" size="10"required>
+            </div>
+
+            <div>
+              Color* <input  type="text" name="color" size="10"required>
+            </div>
+
+            <div>
+              Kilometros* <input  type="text" name="dominio" size="10"required>
+            </div>
+
+            <div>
+              Foto cédula* <input type="file" name="imagenFrontal"required>
+            </div>
+        </div>
+    <hr>
+    <!-------------------------------------- REVISION TECNICA -------------------------------------->
+        <div class="miniForm4">
+            <h3>REVISION TECNICA</h3>
+            <div>
+              Nombre del técnico* <input type="text" name="nombreTecnico" size="15" required>
+            </div>
+              <div>
+                Usuario*: <input type="text" name="nombreTecnico" size="15" required>
+              </div>
+              
+         </div>
+        
+        <hr>
+        * campos obliatorios
+</form>
