@@ -145,8 +145,6 @@ export class Hoja1Component implements OnInit {
       console.log(error);
     }
     );
-
-    console.log(this.precio);
   }
 
 

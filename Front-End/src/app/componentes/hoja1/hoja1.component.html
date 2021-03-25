@@ -9,7 +9,7 @@
         <div class="miniForm1">
           <h3>DATOS TITULAR</h3>
         <div>
-          Nombre y apellido* <input  type="text" name="nombre" size="30"required>
+          Nombre y apellido* <input  type="text" name="nombre" size="30" [(ngModel)]="nombre_apellido">
         </div>  
         </div>
 
@@ -18,7 +18,7 @@
         <div class="miniForm3">
             <h3>DATOS AUTOMOTOR</h3>
             <div>
-              Marca* <select name="marca" required>
+              Marca* <select name="marca" [(ngModel)]="marca" (change)="obtenerGrupos()">
                 <option value="Seleccione una marca">Seleccione una marca</option>
                 <option *ngFor="let marca of marcas">{{marca}}</option>
               </select>
@@ -26,23 +26,23 @@
             </div>
 
             <div>
-              Grupo* <select name="marca"required>
+              Grupo* <select name="marca" [(ngModel)]="grupo" (change)="obtenerModelos()">
                 <option value="Seleccione un grupo">Seleccione un grupo</option>
                 <option *ngFor="let grupo of grupos">{{grupo}}</option>
               </select>
             </div>
 
             <div>
-              Modelo* <select name="modelo"required>
+              Modelo* <select name="modelo" [(ngModel)]="codia" (change)="obtenerYears()">
                 <option value="Seleccione un grupo">Seleccione un grupo</option>
-                <option value="{{modelo_codia.codia}}" *ngFor="let modelo_codia of modelos_codias">{{modelo_codia.modelo}}</option>
+                <option value="{{codia}}" *ngFor="let modelo_codia of modelos_codias">{{modelo_codia.modelo}}</option>
               </select>
             </div>
 
             <div>
-              Año* <select name="year"required>
+              Año* <select name="year" [(ngModel)]="precio" (change)="obtenerPrecios()">
                 <option value="Seleccione un grupo">Seleccione un grupo</option>
-                <option value="{{year.precio}}" *ngFor="let year of precios_years">{{year.year}}</option>
+                <option value="{{precio}}" *ngFor="let year of precios_years">{{year.year}}</option>
               </select>
             </div>
 

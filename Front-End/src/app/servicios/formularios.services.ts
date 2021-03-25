@@ -11,8 +11,9 @@ export class FormularioServicio {
     constructor(
         public _http: HttpClient
     ){
-        this.url1 = "http://192.168.9.10/WebAppLorenzoTasa/Back-End/src/servicios/traer_modelos.php";
+        this.url1 = "https://web-app-lorenzo-tasaciones.herokuapp.com/src/servicios/traer_modelos.php";
         //"http://localhost/WebAppLorenzoTasa/Back-End/src/servicios/traer_modelos.php"
+        //"https://web-app-lorenzo-tasaciones.herokuapp.com/src/servicios/traer_modelos.php"
         this.url2 = "http://192.168.9.10/WebAppLorenzoTasa/Back-End/src/servicios/guardarImagenes.php";
         //http://localhost/WebAppLorenzoTasa/Back-End/src/servicios/guardarImagenes.php
     }
